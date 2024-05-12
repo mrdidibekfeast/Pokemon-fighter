@@ -162,7 +162,7 @@
 
                     case 4:
 
-                        currPokemon.isBlocking = true;
+                        currPokemon.IsBlocking = true;
                         Console.WriteLine($"{currPokemon.Name} is blocking");
                         break;
                 }

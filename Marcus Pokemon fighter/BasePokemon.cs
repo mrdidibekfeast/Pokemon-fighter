@@ -1,4 +1,6 @@
-﻿namespace Marcus_Pokemon_fighter
+﻿using System.Net.Cache;
+
+namespace Marcus_Pokemon_fighter
 {
 
     //pokemon figheter
@@ -28,10 +30,27 @@
         public int Heal;
         public int AmountBlocked;
         public int SpecialDamage;
-        public bool isBlocking = false;
+
+        private bool isBlocking;
+        make sure to change everything to the big IsBlocking
+        public bool IsBlocking
+        {
+            get
+            {
+                return isBlocking;
+            }
+            set
+            {
+                isBlocking = value;
+                if(!isBlocking)
+                {
+                    roundCounter++;
+                }
+            }
+        };
         public int roundCounter = 0;
 
-        int CoolDownAmount = 0;
+        public int CoolDownAmount = 0;
 
         public BasePokemon(string name, string attackName, string specialName, int health, int attackDamage, int heal, int amountBlocked, int specialDamage, int coolDownAmount)
         {
@@ -50,7 +69,7 @@
         {
             isBlocking = false;
 
-            if (target.isBlocking == false)
+            if (target.IsBlocking == false)
             {
 
                 Console.WriteLine($"{Name} hit {target.Name} with {AttackName} for {AttackDamage} damage.");

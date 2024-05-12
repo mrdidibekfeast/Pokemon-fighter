@@ -4,7 +4,7 @@
     {
         public class Hakop : BasePokemon
         {
-            int roundCounter;
+           
             public Hakop()//string attackName, string specialName, int health, int attackDamage, int heal, int amountBlocked, int specialDamage)
                 : base("Hakop", "beard", "dunk", 100, 8, 10, 15, 20, 5)
             {
@@ -13,7 +13,7 @@
 
             public override void SpecialAttack(BasePokemon target)
             {
-                if (roundCounter >= 5)
+                if (roundCounter >= CoolDownAmount)
                 {
                     isBlocking = false;
 
